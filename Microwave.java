@@ -74,16 +74,13 @@ final class Microwave {
         if ("pizza".equals(foodType) || "Pizza".equals(foodType)) {
             foodTime = PIZZA_TIME;
             return foodTime;
-        }
-        else if ("soup".equals(foodType) || "Soup".equals(foodType)) {
+        } else if ("soup".equals(foodType) || "Soup".equals(foodType)) {
             foodTime = SOUP_TIME;
             return foodTime;
-        }
-        else if ("sub".equals(foodType) || "Sub".equals(foodType)) {
+        } else if ("sub".equals(foodType) || "Sub".equals(foodType)) {
             foodTime = SUB_TIME;
             return foodTime;
-        }
-       	else {
+        } else {
             System.out.println("\nPlease insert one of the 3 types of food");
             System.exit(0);
             return foodTime;
@@ -98,14 +95,11 @@ final class Microwave {
     static double AmountOfFood(int amountOfFood) {
         if (amountOfFood == ONE) {
             return amountOfFood;
-        }
-       	else if (amountOfFood == TWO) {
+        } else if (amountOfFood == TWO) {
             return AMOUNT_TWO;
-        }
-       	else if (amountOfFood == THREE) {
+        } else if (amountOfFood == THREE) {
             return AMOUNT_THREE;
-        }
-       	else {
+        } else {
             System.out.println("\nPlease, insert an integer between 1 and 3");
             System.exit(0);
             return 0.0;
@@ -140,8 +134,7 @@ final class Microwave {
             System.out.println("\nYour food is going to be heated up for "
                 + minutes + " min and " + seconds + " seconds."
             );
-        }
-        catch (java.util.InputMismatchException error) {
+        } catch (java.util.InputMismatchException error) {
             System.out.println("\nThere was an error: " + error);
         }
         System.out.println("\nDone.");
