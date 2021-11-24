@@ -70,7 +70,6 @@ final class Microwave {
      */
     static double food(final String foodType) {
         // https://www.w3schools.com/java/java_conditions.asp
-        // https://stackoverflow.com/questions/658953/if-statement-with-string-comparison-fails
         final double ret;
         double foodTime = 0.0;
         if ("pizza".equals(foodType) || "Pizza".equals(foodType)) {
@@ -96,7 +95,7 @@ final class Microwave {
      * @param amountOfFood is good
      * @return = is the amount of increase.
      */
-    static double amount(int amountOfFood) {
+    static double amount(final int amountOfFood) {
         final double ret;
         if (amountOfFood == ONE) {
             ret = amountOfFood;
