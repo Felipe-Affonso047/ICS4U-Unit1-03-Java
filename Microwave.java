@@ -66,44 +66,50 @@ final class Microwave {
      * This is the function of the food type.
      *
      * @param foodType is good
+     * @return = is the time each food takes to heat.
      */
-    static double FoodType(final String foodType) {
+    static double food(final String foodType) {
         // https://www.w3schools.com/java/java_conditions.asp
         // https://stackoverflow.com/questions/658953/if-statement-with-string-comparison-fails
+        final double ret;
         double foodTime = 0.0;
         if ("pizza".equals(foodType) || "Pizza".equals(foodType)) {
             foodTime = PIZZA_TIME;
-            return foodTime;
+            ret = foodTime;
         } else if ("soup".equals(foodType) || "Soup".equals(foodType)) {
             foodTime = SOUP_TIME;
-            return foodTime;
+            ret = foodTime;
         } else if ("sub".equals(foodType) || "Sub".equals(foodType)) {
             foodTime = SUB_TIME;
-            return foodTime;
+            ret = foodTime;
         } else {
             System.out.println("\nPlease insert one of the 3 types of food");
             System.exit(0);
-            return foodTime;
+            ret = foodTime;
         }
+        return ret;
     }
 
     /**
      * This is the function of the amount of food.
      *
      * @param amountOfFood is good
+     * @return = is the amount of increase.
      */
-    static double AmountOfFood(int amountOfFood) {
+    static double amount(int amountOfFood) {
+        final double ret;
         if (amountOfFood == ONE) {
-            return amountOfFood;
+            ret = amountOfFood;
         } else if (amountOfFood == TWO) {
-            return AMOUNT_TWO;
+            ret = AMOUNT_TWO;
         } else if (amountOfFood == THREE) {
-            return AMOUNT_THREE;
+            ret = AMOUNT_THREE;
         } else {
             System.out.println("\nPlease, insert an integer between 1 and 3");
             System.exit(0);
-            return 0.0;
+            ret = 0.0;
         }
+        return ret;
     }
 
     /**
@@ -121,11 +127,11 @@ final class Microwave {
                 "What food are you heating up? Soup, sub or pizza?"
             );
             final String typeOfFood = input.nextLine();
-            final double timePerFood = FoodType(typeOfFood);
+            final double timePerFood = food(typeOfFood);
 
             System.out.println("How many do you want to heat up? (max 3)");
             final int amountOfFood = input.nextInt();
-            final double timePerAmount = AmountOfFood(amountOfFood);
+            final double timePerAmount = amount(amountOfFood);
 
             final double timeOfHeating = timePerAmount * timePerFood;
             final int minutes = (int) (timeOfHeating / SEC_IN_MIN);
